@@ -1,0 +1,770 @@
+/*********
+** MISC **
+*********/
+
+a {
+	&:link, &:visited { color: $pnu-green-med; text-decoration: none; }
+	&:hover { color: $pnu-green-light; text-decoration: underline; }
+	&:active { color:$med-grey; }
+}
+
+a.active { color:$dark-grey; }
+
+th a.active { color: $pnu-green-med; }
+
+p a:link, p a:active, p a:visited, li a:link, li a:active, li a:visited, .description a:link, .description a:active, .description a:visited {
+    text-decoration: underline;
+}
+
+.links li a, .tabs li a { text-decoration: none; }
+
+p, li {
+	font-family: $georgia;
+	line-height: 1.6em;
+	font-size: 1.2em;
+}
+
+p img { @include img-border; margin: 0.6em; }
+
+p.submitted { font-style: italic; }
+
+
+#header, #navigation, .sidebars, #admin-menu {
+	p,li { font-family: $verdana; font-size: 1.1em; }
+}
+
+li { margin-bottom:0.6em; }
+
+li li { font-size: 1em; }
+
+.tabs li {margin-bottom: 0;}
+
+#autocomplete {
+	margin:0 ; padding: 0;
+	ul,li, .form-item { margin:0; padding:0; }
+}
+
+#edit-cancel {
+	margin: 0 1em;
+	color: $red;
+}
+
+hr { width: 90%; margin: 0 auto; height:1px; border: 0;  background-color: $pnu-green-light; text-align: center;}
+
+h2 { color: $pnu-green-dark; border-bottom: 1px dotted $pnu-green-med; }
+
+h3 { color: $pnu-green-light; }
+
+h5 { color: $pnu-green-light; }
+
+table td, table th { padding: 0.4em; text-align: left; }
+
+.page__title, .node__title, .comments__title, .comments__form-title, .comment__title, h1,h2, h3 {
+    font-family: $georgia;
+	font-weight: normal;
+}
+
+.page__title {
+	margin: 0.5em 0;
+}
+
+.block-title {
+	font-size: 1.4em;
+	line-height: 1.4em;
+	margin-bottom: 0.4em;
+	color: #000;
+}
+
+table { 
+
+	width:100%;
+
+	font-size: 0.9em;
+
+	h5 { margin:0; }
+
+	caption { font-size: $h5-font-size; color: $pnu-green-light; font-weight: bold; text-align: left; margin: 1em 0; }
+
+}
+
+.draft {
+	color: $red;
+	font-weight: bold;
+}
+
+.published {
+	color: $pnu-green-light;
+	font-weight: bold;
+}
+
+.unpublished {
+	color: $pnu-green-light;
+}
+
+.node-unpublished {
+	background-color: $pnu-yellow-pale;
+	padding: 1em;
+
+	#comments {
+		display: none;
+	}
+}
+
+.small {
+	font-size: 0.85em;
+	a { color: $dark-grey; }
+}
+
+.breadcrumb {
+	font-style: italic;
+	margin: 1em 0;
+	li {font-family: $verdana; font-size: 0.95em; }
+}
+
+.goto-link {
+	background: url('../images/page-previous.png') no-repeat left center; 
+	margin: 0 0 1em 1em;
+	padding-left: 2.6em;
+	height: 32px;
+	line-height: 1.6em;
+	font-size: 1.2em;
+	a {
+		color:$pnu-green-light;
+	}
+}
+
+/***********
+** HEADER **
+***********/
+
+html body.admin-menu #page {
+	margin-top: 5em;
+	
+	#header .header__secondary-menu {
+		top:2em;
+	}
+} // Make room for the user/secondary menu.
+
+#admin-menu { box-shadow: none; }
+
+#header {
+	background: url('../images/banner.png') no-repeat 120px 50px;
+	background-color: $pnu-yellow;
+	margin-top: $nav-height;  /* Move #header down to make room for secondary menu. */
+	@include rounded-top;
+	
+	h1.header__site-name {
+		@include element-invisible;
+	}
+	
+	.header__secondary-menu {
+		height: $nav-height;
+		line-height: $nav-height;
+		font-weight: bold;
+		text-align:right;
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: 0 5% 0 0;
+
+
+	}
+	
+	.header__site-slogan {
+		line-height:3em;
+		font-size: 1.3em;
+		margin-left: 0.6em;
+	}
+}
+
+
+/***************
+** NAVIGATION **
+***************/
+
+#navigation {
+    padding: 0.5em 0;
+	
+	ul.links {
+		display: block;
+		background-color: $pnu-green-med;
+		padding: 0 2em;
+		@include rounded-btm;		
+		li { 
+			float: left;
+			font-size: 1.2em;
+			line-height: 1.6em;
+			margin-bottom: 0;
+			
+			a {
+				color: #FFF;
+				padding: 0.3em 0.5em;
+			}
+			
+			.active { 
+				background-color: $pnu-green-light;
+				@include rounded;
+				border-bottom: 1px solid $pnu-green-pale;
+				border-left: 1px solid $pnu-green-pale;		}
+		}
+	
+	}
+}
+
+
+/***********
+** LAYOUT **
+***********/
+
+#content {
+	padding: 0 2em 0 1em;
+}
+
+.sidebar-second .region-sidebar-second {
+
+}
+
+
+.sidebars .block {
+	padding: 0.5em;
+	background-color: $pnu-green-pale;
+	@include rounded;	
+	border: 1px solid $med-grey;
+	
+	ul { margin: 0; }
+	
+	p { 
+		margin: 0.4em 0;
+		font-size: .95em;
+		line-height: 1.5em;
+		
+		a { text-decoration: underline; }
+	}
+
+	tr.even, tr.odd { background-color: transparent; }
+}
+
+
+/**************
+** FIELDSETS **
+**************/
+
+fieldset {
+	padding: 1em;
+	margin: 1em;
+
+	.fieldset-title {
+		font-size: 1.4em;
+		font-weight: bold;
+	}
+
+	legend { font-weight: bold; }
+
+	p { margin-top: 0; }
+}
+
+html.js .collapsible {
+	&.collapsed .fieldset-legend { background: url('../images/collapsed.png') no-repeat left 0; }
+	.fieldset-legend {
+		padding-left: 3em;
+		min-height: 36px;
+		background: url('../images/collapsible.png') no-repeat left 0;
+		font-weight: normal;
+	}	
+}
+
+
+/**********
+** FORMS **
+**********/
+
+form {
+
+	.field-multiple-table { 
+		width: 100%;
+		
+		th.field-label label {	
+			padding-bottom: 1em;
+		}
+	}
+	
+	.form-item .description {
+		margin-top: 0.3em;
+		color: $dark-grey;
+	}
+	
+	.filter-wrapper {
+		@include element-invisible;
+	}	
+}
+
+.views-row .form-item {
+    margin: 0;
+}
+
+html.js table input.form-autocomplete {
+	width: 200px;
+}
+
+/*************
+** COMMENTS **
+*************/
+
+#content li.comment-add {
+	display: inline-block;
+	background: url('../images/icon-discussion-ex-32px.png') no-repeat left center; 
+	margin: 0 0 1em 1em;
+	padding-left: 2.6em;
+	height: 32px;
+	line-height: 1.4em;
+	font-size: 1.2em;
+	font-family: $verdana;
+	font-weight: bold;
+
+	a {
+		color:$pnu-green-light;
+	}
+}
+
+.comments {
+
+	.comments__title, .comments__form-title { margin-top: 2em; }
+
+	mark.new { float: right; }
+
+	p.submitted { 
+		background: url('../images/icon-discussion-ex-32px.png') no-repeat left center; 
+		margin: 1em 0 1em 0;
+		padding-left: 2.6em;
+		height: 32px;
+		line-height: 1.4em;
+	}
+
+	.comment {
+		border-bottom: 1px solid $med-grey;
+
+		ul.links { float: right; margin: 0 0 1em 0; }
+	}
+
+	.field-name-comment-body { margin-left: 3em;}
+}
+
+
+/***********
+** PANELS **
+***********/
+
+.panel-2col-stacked {
+
+	.panel-col-first { width: 69.5%; 
+		.inside { margin: 0 4em 1em 0; }
+	}
+	.panel-col-last { width: 30%; 
+	}
+	.panel-col-bottom { padding-top: 1em; }
+	
+}
+
+#content .panel-2col-stacked  h2.pane-title {
+	border: none;
+	font-family: $verdana;
+	font-size: 1.2em;
+    font-weight: bold;
+}
+
+.pane-node-field-topic-description, .pane-node-body {
+	margin: 0 1em;
+}
+
+
+/**********
+** BOOKS **
+**********/
+
+#od_popup { left: 10%; }
+
+.book-navigation {
+
+	.page-links {
+		padding: 1em 0;
+		margin-top:3em;
+	}
+
+
+	.page-previous { 
+		background: url('../images/page-previous.png') no-repeat left 0;
+		padding-left: 6%;
+		width: 27%;
+		min-height: 36px;
+	 }
+
+
+	.page-next { 
+		background: url('../images/page-next.png') no-repeat right 0;
+		padding-right: 6%;
+		width: 27%;
+		min-height: 36px;
+	 }
+	 
+	 .page-up {
+		background: url('../images/page-up.png') no-repeat center top;
+		padding-top: 36px;
+		margin: 0 3%;
+		width: 26.9%;
+	 }
+
+}
+
+#content ul.links li.book_add_child { display: none; }
+
+li.book_printer { 
+	display: block;
+	background: url('../images/print-32px.png') no-repeat left center;
+	margin: 1em 0;
+	padding-left: 2.6em;
+	height: 32px;
+}
+
+li.book_pdf { 
+	display: block;
+	background: url('../images/pdf-32px.png') no-repeat left center;
+	margin: 1em 0;
+	padding-left: 2.6em;
+	height: 32px;
+}
+
+.session-home-link { 
+	
+	margin: 0; 
+
+    a { 
+    	@include button;
+    	font-weight:bold;
+		&:link, &:active, &:visited { background-color: $pnu-green-med; }
+    	&:hover { background-color: $pnu-green-light; text-decoration: none; }
+
+    }	
+}
+
+/**********
+** MEDIA **
+**********/
+
+// Video embeds via OEmbed in node content
+
+.oembed-title { display: block; font-style:italic; margin: 1em 0 1em 0 }
+
+/**********
+** VIEWS **
+***********/
+
+.block, .panel-pane {
+
+	.views-row {
+		border-top: 1px dotted $med-grey;
+		padding: 0.2em 0 0.2em 0;
+		line-height: 2em;
+		
+		.views-row {
+			border: none;
+			padding: 0 0 0 40px;
+		}
+			
+		.views-row-last {
+			margin-bottom: 0.8em;
+		}
+	}
+	.views-row-first {
+		border-top: none;
+	}
+	
+	fieldset.views-row-first {
+		border-top: 1px dotted $med-grey;
+	}
+}
+
+.views-table {
+	width: 100%;
+}
+
+.views-row-edit-static { display: none; }
+
+#editableviews-entity-form-pnu-group-members .form-required {
+	display: none;
+}
+
+.view-pnu-course-content, .view-display-id-page_course_content_show_hide  {
+
+	fieldset { margin-top: 2em; }
+	
+	.outline-depth-2 {
+		display: inline-block;
+		margin: 0.5em 0;
+		font-size: $h5-font-size;
+		font-weight: bold;
+	}
+
+	.outline-depth-3 {
+		padding-left: 0.8em;
+	}
+	
+	.outline-depth-4 {
+		padding-left: 1.8em;
+		font-style: italic;
+	}
+
+	
+	mark.updated, mark.new { 
+		display: none;
+	}
+	
+	.viewed { 
+		background: url('../images/viewed.png') no-repeat left center;
+		width: 36px;
+		/* Hide the text. */
+	    display: inline-block;
+	    float: right;
+	    clear: left;
+	    overflow: hidden;
+	    font-size: 0px;
+	}
+
+	.views-row {
+	    border-top: 1px dotted #dddddd;
+	    line-height: 2em;
+	    padding: 0.2em 0;
+	}
+
+	.views-field-views-bulk-operations { display: inline-block; }
+	
+}
+
+
+.view-display-id-page_course_content_topic_overview { 
+
+	.views-field-field-topic-description {
+		padding: 0 2%;
+	}
+	
+	.views-field-view {
+		float: right;
+	    margin: 1em 1%;
+	    padding: 1em 2%;
+	    width: 33.9%;
+	    background: url('../images/diagonal-bg.png') repeat;
+		@include rounded;
+		
+		.views-label {
+		    display: block;
+		    font-size: 1.2em;
+		    font-weight: bold;
+		    margin-bottom:0.8em;
+		}
+		
+		.views-row {		
+			border-top: 1px dotted $med-grey;
+			padding: 0.2em 0 0.2em 0;
+			line-height: 2em;	
+		}
+		
+		.views-row-first {
+			border-top: none;
+		}
+	}
+
+	.outline-depth-3 { padding-left: 0; }
+
+}
+
+.panel-pane .view-display-id-block_course_content_topic_nav {
+
+	background: url('../images/diagonal-bg.png') repeat;
+	@include rounded;
+	padding: 1em;
+
+	.outline-depth-3 { padding-left: 0; }
+
+	.outline-depth-4 { padding-left: 0; }
+
+}
+
+.view-pnu-collected-resources {
+	.views-field-field-topic-resource-link  { 
+		.link-item {
+			padding: 0.4em 1em;
+    		border-bottom: 1px solid #ccc;
+		}
+		.even { background-color: $light-grey;}
+		.odd { background-color: #FFF;}
+	}
+	.views-field-field-topic-resource-upload  { 
+		ul {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			li { 
+				padding: 0.4em 1em;
+				font-family: $verdana;
+				font-size: 1em;
+				margin:0;
+    			border-bottom: 1px solid #ccc;
+			}
+		}
+	}
+
+}
+
+.views-nav-block {
+
+	margin-bottom: 1em;
+
+	.block-button, a.block-button {
+		display: block;
+	}
+}
+
+
+h5.assignment-respond-link {
+	background: url('../images/icon-assignment-ex-32px.png') no-repeat left center; 
+	margin: 0 0 1em 1em;
+	padding-left: 2.6em;
+	height: 32px;
+	line-height: 1.4em;
+	a {
+		color:$pnu-green-light;
+	}
+}
+
+h5.discussion-respond-link {
+	background: url('../images/icon-discussion-ex-32px.png') no-repeat left center; 
+	margin: 0 0 1em 1em;
+	padding-left: 2.6em;
+	height: 32px;
+	line-height: 1.4em;
+	a {
+		color:$pnu-green-light;
+	}
+}
+
+
+h5.topic-goto-link { 
+	background: url('../images/icon-book-page-32px.png') no-repeat left center; 
+	margin: 0 0 1em 1em;
+	padding-left: 2.6em;
+	height: 32px;
+	color: #000000;
+	a {
+		color:$pnu-green-light;
+	}
+}
+
+h5.goto-link {
+	background: url('../images/page-next.png') no-repeat left center; 
+	margin: 0 0 1em 1em;
+	padding-left: 2.6em;
+	height: 32px;
+	line-height: 1.6em;
+	a {
+		color:$pnu-green-light;
+	}
+}
+
+
+h5.backto-link {
+	background: url('../images/page-previous.png') no-repeat left center; 
+	margin: 0 0 1em 1em;
+	padding-left: 2.6em;
+	height: 32px;
+	line-height: 1.6em;
+	a {
+		color:$pnu-green-light;
+	}
+}
+
+
+
+
+/*******************************
+** COURSES AND COURSE CONTENT **
+*******************************/
+
+.node-session {
+
+	.field-name-field-session-dates {
+
+		font-size: 1.2em;
+		font-weight: bold;
+		line-height: 3em;
+	}
+
+	.field-name-field-session-registration .field-label {
+		font-size: 1.8em;
+		font-weight: normal;
+		line-height: 2em;
+		color: $pnu-green-med;
+		font-family: $georgia;
+
+	}
+
+	.node-course h2.node-title { display: none; }
+}
+
+.node-type-topic-resources {
+	.field-name-field-topic-resource-link, .field-name-field-topic-resource-upload { 
+		.field-item {
+			padding: 0.4em 1em;
+    		border-bottom: 1px solid #ccc;
+		}
+		.even { background-color: $light-grey;}
+		.odd { background-color: #FFF;}
+	}
+}
+
+
+/***************
+** Privatemsg **
+***************/
+
+#edit-privatemsg {  // Hide option to disable private messages
+	display: none;
+}
+
+body.page-user-1 #edit-privatemsg {  // Show option to enable/disable private messages only to admin user 1
+	display: block;
+}
+
+.privatemsg-author-avatar {
+	width: 5%;
+}
+
+
+.privatemsg-message-column {
+	width: 93%;
+}
+
+
+/***************
+** Privatemsg **
+***************/
+
+.page-user {
+
+	.field-name-field-profile-photo { float: right; }
+}
+
+/***********
+** FOOTER **
+***********/
+
+.region-footer {
+	text-align:center;
+	margin-top: 2em;
+	font-size: 0.85em;
+	
+	img {
+		margin-right: 1em;
+		vertical-align: middle;
+	}
+	
+	
+}

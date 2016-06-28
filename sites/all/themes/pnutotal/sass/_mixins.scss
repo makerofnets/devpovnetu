@@ -1,0 +1,104 @@
+// @file
+// Custom sass mixins
+//
+// Define the custom mixins for your project here.
+// http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#defining_a_mixin
+
+// Makes an element visually hidden, but accessible.
+// @see http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+@mixin element-invisible {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  @if $legacy-support-for-ie6 or $legacy-support-for-ie7 {
+    clip: rect(1px 1px 1px 1px); // IE6 and IE7 use the wrong syntax.
+  }
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+// Turns off the element-invisible effect.
+@mixin element-invisible-off {
+  position: static !important;
+  clip: auto;
+  height: auto;
+  width: auto;
+  overflow: auto;
+}
+
+// Makes an element visually hidden by default, but visible when focused.
+@mixin element-focusable {
+  @include element-invisible;
+
+  &:active,
+  &:focus {
+    @include element-invisible-off;
+  }
+}
+
+// Provides a default for buttons.
+@mixin button {
+	display:block;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	background-color: $pnu-green-med;
+	padding: 1px 4px 2px 4px;
+	font-family: $lucida;
+	color: #FFF;
+	margin: 1em 0;
+	text-decoration: none;
+	text-align:center;
+	
+	a:link, a:visited {
+		color: #FFF;
+	}
+	&:hover {
+			text-decoration: underline;
+			background-color: $pnu-green-dark;
+
+	}
+}
+
+// Provides a default for rounded corners.
+@mixin rounded {
+	border-radius: 20px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+}
+
+// Provides a variation on rounded corners.
+@mixin rounded-top {
+	border-top-right-radius: 30px;
+	-moz-border-top-right-radius: 30px;
+	-webkit-border-top-right-radius: 30px;
+	border-top-left-radius: 30px;
+	-moz-border-top-left-radius: 30px;
+	-webkit-border-top-left-radius: 30px;
+}
+
+@mixin rounded-btm {
+	border-bottom-right-radius: 20px;
+	-moz-border-bottom-right-radius: 20px;
+	-webkit-border-bottom-right-radius: 20px;
+	border-bottom-left-radius: 20px;
+	-moz-border-bottom-left-radius: 20px;
+	-webkit-border-bottom-left-radius: 20px;
+}
+
+// Provides default rounded image borders.
+@mixin img-border {
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border: 1px solid $light-grey;
+}
+
+@mixin highlighted {
+	color: #000;
+	/* Remove background highlighting from <mark> in normalize. */
+	background-color: $pnu-yellow;
+	font-size: 0.8em;
+	padding: 2px;
+}
+
