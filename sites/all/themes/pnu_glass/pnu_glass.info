@@ -30,6 +30,7 @@ regions[help]                = Help
 regions[sidebar_first]       = Sidebar first
 regions[sidebar_second]      = Sidebar second
 regions[content]             = Main Content
+regions[footer_sponsors]	 = Footer Sponsors
 regions[footer_message]      = Footer Message
 regions[footer_block1]       = Footer Block 1
 regions[footer_block2]       = Footer Block 2

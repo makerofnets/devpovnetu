@@ -1,0 +1,23 @@
+/* Home page */
+/* home page welcome region */
+.home-welcome {
+  background-image: url(images/css-header-header-povnet-main-background.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 650px;
+  font-family: roboto;
+}
+
+/* home page call to action */
+
+.home-cta .content-box {
+  border-right: 4px solid;
+  border-bottom: 4px solid;
+  border-top: 4px solid;
+  border-left: 4px solid;
+  height: 170px;
+}

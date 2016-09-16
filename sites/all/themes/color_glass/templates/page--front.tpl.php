@@ -52,6 +52,8 @@
 /* Print welcome block */
 print _bootstrap_region_render($page['home_welcome'], 'home_welcome', 'section', 'home-welcome', 'home-welcome home-section'); ?>
 
+<?php print render($page['content']); ?>
+
 <!-- Render the Content light green Region -->
 <?php print _bootstrap_region_render($page['home_cta'], 'home_cta', 'div', 'home-cta', 'home-cta home-section'); ?>
 
